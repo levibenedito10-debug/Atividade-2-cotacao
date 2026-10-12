@@ -10,13 +10,11 @@ def cotar():
 
         data = dia.strftime('%m-%d-%Y')
 
-        url = (
-            'https://olinda.bcb.gov.br/olinda/servico/'
+        url = ('https://olinda.bcb.gov.br/olinda/servico/'
             'PTAX/versao/v1/odata/'
             'CotacaoDolarDia(dataCotacao=@dataCotacao)'
             f'?@dataCotacao=%27{data}%27'
-            '&$top=1&$format=json'
-        )
+            '&$top=1&$format=json')
 
         resposta = requests.get(url)
         dados = resposta.json()['value']
